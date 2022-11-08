@@ -1,0 +1,109 @@
+DEFINE	DIAC
+DEFINE	LEX
+DEFINE	POS
+DEFINE	PRC3
+DEFINE	PRC2
+DEFINE	PRC1
+DEFINE	PRC0
+DEFINE	PER
+DEFINE	ASP
+DEFINE	VOX
+DEFINE	MOD
+DEFINE	FGEN
+DEFINE	GEN
+DEFINE	FNUM
+DEFINE	NUM
+DEFINE	STT
+DEFINE	CAS
+DEFINE	ENC0
+DEFINE	RAT
+FORMAT	diac:#DIAC# lex:#LEX# pos:#POS# prc3:#PRC3# prc2:#PRC2# prc1:#PRC1# prc0:#PRC0# per:#PER# asp:#ASP# vox:#VOX# mod:#MOD# form_gen:#FGEN# gen:#GEN# form_num:#FNUM# num:#NUM# stt:#STT# cas:#CAS# enc0:#ENC0# rat:#RAT#
+CONFIG	base_word_order	4
+MAP	LEX	#VAL#	4	lex	#VAL#								
+MAP	POS	#VAL#	4	pos	#VAL#								
+MAP	PRC3	>a_ques	0	pos	part_interrog	diac	>a						
+MAP	PRC2	fa_conj	1	pos	conj	diac	fa						
+MAP	PRC2	fa_conn	1	pos	part_conn	diac	fa						
+MAP	PRC2	fa_rc	1	pos	part_rc	diac	fa						
+MAP	PRC2	fa_sub	1	pos	conj_sub	diac	fa						
+MAP	PRC2	wa_conj	1	pos	conj	diac	wa						
+MAP	PRC2	wa_sub	1	pos	conj_sub	diac	wa						
+MAP	PRC2	wa_part	1	pos	part	diac	wa						
+MAP	PRC1	sa_fut	2	pos	part_fut	diac	sa						
+MAP	PRC1	bi_part	2	pos	part	diac	bi						
+MAP	PRC1	bi_prep	2	pos	prep	diac	bi						
+MAP	PRC1	fiy_prep	2	pos	prep	diac	fiy						
+MAP	PRC1	hA_dem	2	pos	part	diac	hA						
+MAP	PRC1	ka_prep	2	pos	prep	diac	ka						
+MAP	PRC1	li_prep	2	pos	prep	diac	li						
+MAP	PRC1	la_prep	2	pos	prep	diac	la						
+MAP	PRC1	la_emph	2	pos	part_emph	diac	la						
+MAP	PRC1	la_rc	2	pos	part_rc	diac	la						
+MAP	PRC1	li_jus	2	pos	part_jus	diac	li						
+MAP	PRC1	li_sub	2	pos	part_sub	diac	li						
+MAP	PRC1	wa_prep	2	pos	prep	diac	wa						
+MAP	PRC1	ta_prep	2	pos	prep	diac	ta						
+MAP	PRC1	yA_voc	2	pos	part_voc	diac	yA						
+MAP	PRC1	wA_voc	2	pos	part_voc	diac	wA						
+MAP	PRC0	Al_det	3	pos	part_det	diac	Al						
+MAP	PRC0	lA_neg	3	pos	part_neg	diac	lA						
+MAP	PRC0	mA_neg	3	pos	part_neg	diac	mA						
+MAP	PRC0	mA_part	3	pos	part	diac	mA						
+MAP	PRC0	mA_rel	3	pos	pron_rel	diac	mA						
+MAP	PER	#VAL#	4	per	#VAL#								
+MAP	ASP	#VAL#	4	asp	#VAL#								
+MAP	VOX	#VAL#	4	vox	#VAL#								
+MAP	MOD	#VAL#	4	mod	#VAL#								
+MAP	FGEN	#VAL#	4	form_gen	#VAL#								
+MAP	GEN	#VAL#	4	gen	#VAL#								
+MAP	FNUM	#VAL#	4	form_num	#VAL#								
+MAP	NUM	#VAL#	4	num	#VAL#								
+MAP	STT	#VAL#	4	stt	#VAL#								
+MAP	CAS	#VAL#	4	cas	#VAL#								
+MAP	ENC0	1p_dobj	5	pos	pron	diac	nA	per	1	num	p		
+MAP	ENC0	1p_poss	5	pos	pron	diac	nA	per	1	num	p		
+MAP	ENC0	1p_pron	5	pos	pron	diac	nA	per	1	num	p		
+MAP	ENC0	1s_dobj	5	pos	pron	diac	nY	per	1	num	s		
+MAP	ENC0	1s_poss	5	pos	pron	diac	Y	per	1	num	s		
+MAP	ENC0	1s_pron	5	pos	pron	diac	Y	per	1	num	s		
+MAP	ENC0	2d_dobj	5	pos	pron	diac	kumA	per	2	num	d		
+MAP	ENC0	2d_poss	5	pos	pron	diac	kumA	per	2	num	d		
+MAP	ENC0	2d_pron	5	pos	pron	diac	kumA	per	2	num	d		
+MAP	ENC0	2fp_dobj	5	pos	pron	diac	kun~a	per	2	num	p	gen	f
+MAP	ENC0	2fp_poss	5	pos	pron	diac	kun~a	per	2	num	p	gen	f
+MAP	ENC0	2fp_pron	5	pos	pron	diac	kun~a	per	2	num	p	gen	f
+MAP	ENC0	2fs_dobj	5	pos	pron	diac	ki	per	2	num	s	gen	f
+MAP	ENC0	2fs_poss	5	pos	pron	diac	ki	per	2	num	s	gen	f
+MAP	ENC0	2fs_pron	5	pos	pron	diac	ki	per	2	num	s	gen	f
+MAP	ENC0	2mp_dobj	5	pos	pron	diac	kum	per	2	num	p	gen	m
+MAP	ENC0	2mp_poss	5	pos	pron	diac	kum	per	2	num	p	gen	m
+MAP	ENC0	2mp_pron	5	pos	pron	diac	kum	per	2	num	p	gen	m
+MAP	ENC0	2ms_dobj	5	pos	pron	diac	ka	per	2	num	s	gen	m
+MAP	ENC0	2ms_poss	5	pos	pron	diac	ka	per	2	num	s	gen	m
+MAP	ENC0	2ms_pron	5	pos	pron	diac	ka	per	2	num	s	gen	m
+MAP	ENC0	3d_dobj	5	pos	pron	diac	humA|himA	per	3	num	d		
+MAP	ENC0	3d_poss	5	pos	pron	diac	humA|himA	per	3	num	d		
+MAP	ENC0	3d_pron	5	pos	pron	diac	humA|himA	per	3	num	d		
+MAP	ENC0	3fp_dobj	5	pos	pron	diac	hun~a	per	3	num	p	gen	f
+MAP	ENC0	3fp_poss	5	pos	pron	diac	hun~a	per	3	num	p	gen	f
+MAP	ENC0	3fp_pron	5	pos	pron	diac	hun~a	per	3	num	p	gen	f
+MAP	ENC0	3fs_dobj	5	pos	pron	diac	hA	per	3	num	s	gen	f
+MAP	ENC0	3fs_poss	5	pos	pron	diac	hA	per	3	num	s	gen	f
+MAP	ENC0	3fs_pron	5	pos	pron	diac	hA	per	3	num	s	gen	f
+MAP	ENC0	3mp_dobj	5	pos	pron	diac	hum|him	per	3	num	p	gen	m
+MAP	ENC0	3mp_poss	5	pos	pron	diac	hum|him	per	3	num	p	gen	m
+MAP	ENC0	3mp_pron	5	pos	pron	diac	hum|him	per	3	num	p	gen	m
+MAP	ENC0	3ms_dobj	5	pos	pron	diac	hu|hi	per	3	num	s	gen	m
+MAP	ENC0	3ms_poss	5	pos	pron	diac	hu|hi	per	3	num	s	gen	m
+MAP	ENC0	3ms_pron	5	pos	pron	diac	hu|hi	per	3	num	s	gen	m
+MAP	ENC0	Ah_voc	5	pos	part_voc	diac	Ah						
+MAP	ENC0	lA_neg	5	pos	part_neg	diac	lA						
+MAP	ENC0	mA_interrog	5	pos	part_interrog	diac	mA						
+MAP	ENC0	ma_interrog	5	pos	part_interrog	diac	ma						
+MAP	ENC0	man_interrog	5	pos	part_interrog	diac	man						
+MAP	ENC0	mA_sub	5	pos	part_sub	diac	mA						
+MAP	ENC0	ma_sub	5	pos	part_sub	diac	ma						
+MAP	ENC0	mA_rel	5	pos	pron_rel	diac	mA						
+MAP	ENC0	ma_rel	5	pos	pron_rel	diac	ma						
+MAP	ENC0	man_rel	5	pos	pron_rel	diac	man						
+MAP	RAT	#VAL#	4	rat	#VAL#								

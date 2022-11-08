@@ -1,0 +1,17 @@
+pos:abbrev|conj|conj_sub|digit|foreign|interj|part|part_det|part_focus|part_fut|part_interrog|part_neg|part_restrict|part_verb|part_voc|prep|punc|verb_pseudo per:na asp:na vox:na mod:na stt:na cas:na ex:lkn|لكن cnt:129216
+pos:adj|adj_comp|adj_num|noun|noun_prop per:na asp:na vox:na mod:na stt:c|d|i cas:a|g|n|u ex:byrwt|بيروت cnt:2384
+pos:adv|adv_interrog|adv_rel per:na asp:na vox:na mod:na stt:i cas:u ex:kyf|كيف cnt:230
+pos:noun_num|pron_interrog per:na asp:na vox:na mod:na stt:c cas:a|g|n ex:>y|أي cnt:82
+pos:noun_num per:na asp:na vox:na mod:na stt:d|i cas:a|g|n|u ex:AlvmAny|الثماني cnt:24
+pos:noun_quant|pron_rel per:na asp:na vox:na mod:na stt:c|i cas:a|g|n|u ex:>y|أي cnt:269
+pos:noun_quant per:na asp:na vox:na mod:na stt:d cas:a|g|n ex:AlgAlbyp|الغالبية cnt:31
+pos:pron per:1|2|3 asp:na vox:na mod:na stt:i cas:n ex:hn|هن cnt:104
+pos:pron_dem per:na asp:na vox:na mod:na stt:i cas:a|n|u ex:h*h|هذه cnt:1551
+pos:pron_interrog per:na asp:na vox:na mod:na stt:i cas:a|g|n|u ex:mA*A|ماذا cnt:66
+pos:verb per:1|2|3 asp:i vox:a|p mod:i|j|s stt:na cas:na ex:tEln|تعلن cnt:2548
+pos:verb per:1|2|3 asp:p vox:a|p mod:i stt:na cas:na ex:kAntA|كانتا cnt:344
+pos:verb per:2 asp:c vox:a mod:i stt:na cas:na ex:AqdHy|اقدحي cnt:2
+pos:verb per:2|3 asp:i vox:a|p mod:u stt:na cas:na ex:ySAbwA|يصابوا cnt:19
+pos:verb per:3 asp:na vox:na mod:na stt:na cas:na ex:EdA|عدا cnt:46
+pos:verb per:3 asp:p vox:a mod:u stt:na cas:na ex:ql~mA|قلّما cnt:1
+pos:verb per:3 asp:p vox:u mod:i stt:na cas:na ex:mAzAlt|مازالت cnt:1
