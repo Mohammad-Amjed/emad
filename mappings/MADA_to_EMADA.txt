@@ -18,10 +18,45 @@ DEFINE	CAS
 DEFINE	ENC0
 DEFINE	RAT
 FORMAT	diac:#DIAC# lex:#LEX# pos:#POS# prc3:#PRC3# prc2:#PRC2# prc1:#PRC1# prc0:#PRC0# per:#PER# asp:#ASP# vox:#VOX# mod:#MOD# form_gen:#FGEN# gen:#GEN# form_num:#FNUM# num:#NUM# stt:#STT# cas:#CAS# enc0:#ENC0# rat:#RAT#
-CONFIG	base_word_order	4
+CONFIG	base_word_order	4									
 MAP	LEX	#VAL#	4	lex	#VAL#								
-MAP	POS	#VAL#	4	pos	#VAL#								
+MAP	POS	abbrev	4	pos	abbrev								
+MAP	POS	adj	4	pos	adj								
+MAP	POS	adj_comp	4	pos	adj_comp								
+MAP	POS	adj_num	4	pos	adj_num								
+MAP	POS	adv	4	pos	adv								
+MAP	POS	adv_interrog	4	pos	adv_interrog								
+MAP	POS	adv_rel	4	pos	adv_rel								
+MAP	POS	conj	4	pos	conj								
+MAP	POS	conj_sub	4	pos	conj_sub								
+MAP	POS	digit	4	pos	digit								
+MAP	POS	interj	4	pos	interj								
+MAP	POS	latin	4	pos	latin								
+MAP	POS	noun	4	pos	noun								
+MAP	POS	noun_num	4	pos	noun_num								
+MAP	POS	noun_prop	4	pos	noun_prop								
+MAP	POS	noun_quant	4	pos	noun_quant								
+MAP	POS	part	4	pos	part								
+MAP	POS	part_det	4	pos	part_det								
+MAP	POS	part_focus	4	pos	part_focus								
+MAP	POS	part_fut	4	pos	part_fut								
+MAP	POS	part_interrog	4	pos	part_interrog								
+MAP	POS	part_neg	4	pos	part_neg								
+MAP	POS	part_restrict	4	pos	part_restrict								
+MAP	POS	part_verb	4	pos	part_verb								
+MAP	POS	part_voc	4	pos	part_voc								
+MAP	POS	prep	4	pos	prep								
+MAP	POS	pron	4	pos	pron								
+MAP	POS	pron_dem	4	pos	pron_dem								
+MAP	POS	pron_exclam	4	pos	pron_exclam								
+MAP	POS	pron_interrog	4	pos	pron_interrog								
+MAP	POS	pron_rel	4	pos	pron_rel								
+MAP	POS	punc	4	pos	punc								
+MAP	POS	verb	4	pos	verb								
+MAP	POS	verb_pseudo	4	pos	verb_pseudo								
+MAP	PRC3	0											
 MAP	PRC3	>a_ques	0	pos	part_interrog	diac	>a						
+MAP	PRC2	0											
 MAP	PRC2	fa_conj	1	pos	conj	diac	fa						
 MAP	PRC2	fa_conn	1	pos	part_conn	diac	fa						
 MAP	PRC2	fa_rc	1	pos	part_rc	diac	fa						
@@ -29,6 +64,7 @@ MAP	PRC2	fa_sub	1	pos	conj_sub	diac	fa
 MAP	PRC2	wa_conj	1	pos	conj	diac	wa						
 MAP	PRC2	wa_sub	1	pos	conj_sub	diac	wa						
 MAP	PRC2	wa_part	1	pos	part	diac	wa						
+MAP	PRC1	0											
 MAP	PRC1	sa_fut	2	pos	part_fut	diac	sa						
 MAP	PRC1	bi_part	2	pos	part	diac	bi						
 MAP	PRC1	bi_prep	2	pos	prep	diac	bi						
@@ -45,21 +81,59 @@ MAP	PRC1	wa_prep	2	pos	prep	diac	wa
 MAP	PRC1	ta_prep	2	pos	prep	diac	ta						
 MAP	PRC1	yA_voc	2	pos	part_voc	diac	yA						
 MAP	PRC1	wA_voc	2	pos	part_voc	diac	wA						
+MAP	PRC0	0											
 MAP	PRC0	Al_det	3	pos	part_det	diac	Al						
 MAP	PRC0	lA_neg	3	pos	part_neg	diac	lA						
 MAP	PRC0	mA_neg	3	pos	part_neg	diac	mA						
 MAP	PRC0	mA_part	3	pos	part	diac	mA						
 MAP	PRC0	mA_rel	3	pos	pron_rel	diac	mA						
-MAP	PER	#VAL#	4	per	#VAL#								
-MAP	ASP	#VAL#	4	asp	#VAL#								
-MAP	VOX	#VAL#	4	vox	#VAL#								
-MAP	MOD	#VAL#	4	mod	#VAL#								
-MAP	FGEN	#VAL#	4	form_gen	#VAL#								
-MAP	GEN	#VAL#	4	gen	#VAL#								
-MAP	FNUM	#VAL#	4	form_num	#VAL#								
-MAP	NUM	#VAL#	4	num	#VAL#								
-MAP	STT	#VAL#	4	stt	#VAL#								
-MAP	CAS	#VAL#	4	cas	#VAL#								
+MAP	PER	1	4	per	1								
+MAP	PER	2	4	per	2								
+MAP	PER	3	4	per	3								
+MAP	PER	na	4	per	na								
+MAP	ASP	c	4	asp	c								
+MAP	ASP	i	4	asp	i								
+MAP	ASP	na	4	asp	na								
+MAP	ASP	p	4	asp	p								
+MAP	VOX	a	4	vox	a								
+MAP	VOX	na	4	vox	na								
+MAP	VOX	p	4	vox	p								
+MAP	VOX	u	4	vox	u								
+MAP	MOD	i	4	mod	i								
+MAP	MOD	j	4	mod	j								
+MAP	MOD	na	4	mod	na								
+MAP	MOD	s	4	mod	s								
+MAP	MOD	u	4	mod	u								
+MAP	FGEN	f	4	form_gen	f								
+MAP	FGEN	m	4	form_gen	m								
+MAP	FGEN	na	4	form_gen	na								
+MAP	GEN	m	4	gen	m								
+MAP	GEN	f	4	gen	f								
+MAP	GEN	b	4	gen	b								
+MAP	GEN	u	4	gen	u								
+MAP	GEN	na	4	gen	na								
+MAP	FNUM	d	4	form_num	d								
+MAP	FNUM	na	4	form_num	na								
+MAP	FNUM	p	4	form_num	p								
+MAP	FNUM	s	4	form_num	s								
+MAP	FNUM	u	4	form_num	u								
+MAP	NUM	s	4	num	s								
+MAP	NUM	d	4	num	d								
+MAP	NUM	p	4	num	p								
+MAP	NUM	u	4	num	u								
+MAP	NUM	b	4	num	b								
+MAP	NUM	na	4	num	na								
+MAP	STT	c	4	stt	c								
+MAP	STT	d	4	stt	d								
+MAP	STT	i	4	stt	i								
+MAP	STT	na	4	stt	na								
+MAP	STT	u	4	stt	u								
+MAP	CAS	a	4	cas	a								
+MAP	CAS	g	4	cas	g								
+MAP	CAS	n	4	cas	n								
+MAP	CAS	na	4	cas	na								
+MAP	CAS	u	4	cas	u								
+MAP	ENC0	0											
 MAP	ENC0	1p_dobj	5	pos	pron	diac	nA	per	1	num	p		
 MAP	ENC0	1p_poss	5	pos	pron	diac	nA	per	1	num	p		
 MAP	ENC0	1p_pron	5	pos	pron	diac	nA	per	1	num	p		
@@ -106,4 +180,10 @@ MAP	ENC0	ma_sub	5	pos	part_sub	diac	ma
 MAP	ENC0	mA_rel	5	pos	pron_rel	diac	mA						
 MAP	ENC0	ma_rel	5	pos	pron_rel	diac	ma						
 MAP	ENC0	man_rel	5	pos	pron_rel	diac	man						
-MAP	RAT	#VAL#	4	rat	#VAL#								
+MAP	RAT	n	4	rat	n								
+MAP	RAT	y	4	rat	y								
+MAP	RAT	i	4	rat	i								
+MAP	RAT	r	4	rat	r								
+MAP	RAT	b	4	rat	b								
+MAP	RAT	u	4	rat	u								
+MAP	RAT	na	4	rat	na								

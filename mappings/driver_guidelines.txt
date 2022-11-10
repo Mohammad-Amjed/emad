@@ -1,2 +1,0 @@
-In the map of each group, the most general tag should come after specific tags for the regex to match correctly
-For example: NOUN should come after NOUN_PROP, otherwise the regex would only match NOUN when seeing NOUN_PROP
