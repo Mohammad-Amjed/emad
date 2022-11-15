@@ -14,6 +14,9 @@ def main():
     with open(f"{map_dir}/{src}", 'r') as f:
         map_driver = json.load(f)
 
+    def_dict = readDefaults("./mappings/defaults.txt")
+    pprint(def_dict)
+    
     src_format = compileRE(map_driver)
     
     m = src_format.match(input_tag)
@@ -23,10 +26,23 @@ def main():
 
     trg_feats = convertFeats(src_vals, map_driver)
 
-    trg_tag = finalTag(trg_feats, map_driver)
+    trg_tag = orderTag(trg_feats, map_driver)
+
+    trg_tag = addDefaults(trg_tag, def_dict)
 
     pprint(trg_tag)
 
+def readDefaults(def_file):
+    def_dict = {}
+    with open(def_file) as f:
+        for line in f:
+            line = line.strip().split('\t')
+            pos = line[0].split(':')[1]
+            feat_val = [pair.split(':') for pair in line[1].split()]
+            def_tag = {pair[0]:pair[1] for pair in feat_val}
+            def_dict[pos] = def_tag
+
+    return def_dict
 
 def compileRE(map_driver):
     src_format = map_driver["format"]
@@ -39,7 +55,7 @@ def compileRE(map_driver):
             values = "\\S+"
         src_format = src_format.replace(f"#{feat}#", f"(?P<{feat}>{values})", 1)
 
-    print(src_format)
+    #print(src_format)
     return re.compile(src_format)
 
 def extractFeats(map_driver, match):
@@ -78,23 +94,35 @@ def convertFeats(src_vals, map_driver):
     
     return output
 
-def finalTag(trg_feats, map_driver):
-    final = []
+def orderTag(trg_feats, map_driver):
+    ordered = []
     keys = [int(i) for i in trg_feats.keys()]
     keys.sort()
     keys = [str(i) for i in keys]
     base_order = int(map_driver['base_word_order'])
     
     for k in keys:
-        final.append(trg_feats[k])
+        ordered.append(trg_feats[k])
         if int(k) == base_order:
-            final[-1]['orth'] = "base"
+            ordered[-1]['orth'] = "base"
         elif int(k) < base_order:
-            final[-1]['orth'] = "proc"
+            ordered[-1]['orth'] = "proc"
         elif int(k) > base_order:
-            final[-1]['orth'] = "enc"
+            ordered[-1]['orth'] = "enc"
 
-    return final
+    return ordered
+
+def addDefaults(tag, def_tag):
+    for subtag in tag:
+        pos = subtag['pos']
+        if pos not in def_tag:
+            print(f"Error: pos {pos} not found in the defaults list")
+        else:
+            for feat in subtag:
+                if subtag[feat] == '-1':
+                    subtag[feat] = def_tag[pos][feat]
+
+    return tag
 
 if __name__ == "__main__":
     main()
