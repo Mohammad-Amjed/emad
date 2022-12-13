@@ -20,7 +20,6 @@ MAP	PRC2	PART_CONNECT	0	pos	part_conn
 MAP	PRC2	PART_RC	0	pos	part_rc
 MAP	PRC1	PREP	1	pos	prep
 MAP	PRC1	PART_FUT	1	pos	part_fut
-MAP	PRC1	CONJ_SUB	1	pos	part_sub
 MAP	PRC1	PRON_DEM	1	pos	part
 MAP	PRC1	PART_EMPHATIC	1	pos	part_emph
 MAP	PRC1	PART_VOC	1	pos	part_voc

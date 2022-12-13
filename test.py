@@ -1,8 +1,17 @@
-dict1 = {1: '3', '4': 5}
+import re, json
+from pprint import pprint
 
+map_dir = "./mappings"
+src = "MADA_to_EMADA.json"
 
-def f(dict1):
-    dict2 = dict1
-    dict2['4'] = 7
+with open(f"{map_dir}/{src}", 'r') as f:
+        map_driver = json.load(f)
 
-print(dict1)
+#pprint(map_driver["map"])
+with open("test.txt") as f:
+    for line in f:
+        if line !="\n":
+            line = line.strip().split(":")[1]
+            for key in map_driver["map"]['ENC0'][line]['5']:
+                print(key, map_driver["map"]['ENC0'][line]['5'][key], end = " ")
+        print()

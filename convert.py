@@ -1,48 +1,42 @@
 import re, json
 from pprint import pprint
+import EMADA
+
+# TODO include the BW map and cases
 
 # TODO handle DIAC
 # TODO handle the morphological analysis of each "subword"
-# TODO replace -1 in output tag with default values
 
 map_dir = "./mappings"
 src = "CAMEL_to_EMADA.json"
 #input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:c cas:a enc0:3mp_poss rat:i"
-input_tag = "CONJ+PART_FUT+ADJ.MS+PRON"
+input_tag = "PART+ADJ.MS+PRON"
 
 def main():
     with open(f"{map_dir}/{src}", 'r') as f:
         map_driver = json.load(f)
-
-    def_dict = readDefaults("./mappings/defaults.txt")
-    pprint(def_dict)
     
     src_format = compileRE(map_driver)
-    
-    m = src_format.match(input_tag)
+    m = findMatch(src_format, input_tag)
+    if not m:
+        print("The input tag doesn't match the format of the source tag set")
+        return
+    else:
+        matches = findMoreMatches(map_driver, m, src_format, input_tag)
 
-    src_vals = extractFeats(map_driver, m)
-    print(src_vals)
+    output_tags = []
+    for m in matches:
+        src_vals = extractFeats(map_driver, m)
+        print(src_vals)
+        EMADA_feats = convertFeats(src_vals, map_driver)
 
-    trg_feats = convertFeats(src_vals, map_driver)
+        EMADA_tag = orderTag(EMADA_feats, map_driver)
+        EMADA_tag.addDefaults()
 
-    trg_tag = orderTag(trg_feats, map_driver)
-
-    trg_tag = addDefaults(trg_tag, def_dict)
-
-    pprint(trg_tag)
-
-def readDefaults(def_file):
-    def_dict = {}
-    with open(def_file) as f:
-        for line in f:
-            line = line.strip().split('\t')
-            pos = line[0].split(':')[1]
-            feat_val = [pair.split(':') for pair in line[1].split()]
-            def_tag = {pair[0]:pair[1] for pair in feat_val}
-            def_dict[pos] = def_tag
-
-    return def_dict
+        print(EMADA_tag)
+        if EMADA_tag not in output_tags:
+            output_tags.append(EMADA_tag)
+    print(len(output_tags))
 
 def compileRE(map_driver):
     src_format = map_driver["format"]
@@ -56,7 +50,42 @@ def compileRE(map_driver):
         src_format = src_format.replace(f"#{feat}#", f"(?P<{feat}>{values})", 1)
 
     #print(src_format)
-    return re.compile(src_format)
+    return src_format
+
+def findMatch(src_format, input_tag):
+    src_re = re.compile(src_format)
+    m = src_re.match(input_tag)
+    return m
+
+def compareMatches(map_driver, m1, m2):
+    for feat in map_driver['features']:
+        if m1.group(feat) and m1.group(feat) != m2.group(feat):
+            return False
+    
+    return True
+
+def findMoreMatches(map_driver, match, src_format, input_tag):
+    matches = [match]
+    #print(src_format)
+    for feat in match.groupdict():
+        val = match.groupdict()[feat]
+        if val:
+            #re_exp = re.compile(f"(\\(\\?P<{feat}>((\\(.*\\|)|(\\())){val}(\\||\\))")
+            #print(f"(\\(\\?P<{feat}>(\\([^<]*\\||\\()){val}(\\||\\))")
+            new_format = re.sub(f"(\\(\\?P<{feat}>(\\([^<]*\\||\\()){val}(\\||\\))", "\\g<1>\\g<3>", src_format)
+            new_format = new_format.replace("(|", "(")
+            new_format = new_format.replace("||", "|")
+            new_format = new_format.replace("|)", ")")
+            if new_format != src_format:
+                m = findMatch(new_format, input_tag)
+                if m and m.group(0) == input_tag:
+                    new_matches = findMoreMatches(map_driver, m, new_format, input_tag)
+                    for m1 in new_matches:
+                        for m2 in matches:
+                            if not compareMatches(map_driver, m1, m2):
+                                matches.append(m1)
+            #new_format = src_format
+    return matches
 
 def extractFeats(map_driver, match):
     vals = {}
@@ -65,12 +94,6 @@ def extractFeats(map_driver, match):
             vals[feat] = match.group(feat)
 
     return vals
-
-def empty_tag():
-    new_tag = { 'orth': '-1', 'per': '-1', 'asp': '-1', 'cas': '-1', 'stt': '-1',
-                'mod': '-1', 'vox': '-1', 'form_gen': '-1', 'gen': '-1', 'form_num': '-1',
-                'num': '-1', 'rat': '-1'}
-    return new_tag
 
 def convertFeats(src_vals, map_driver):
     output = {}
@@ -81,36 +104,36 @@ def convertFeats(src_vals, map_driver):
             if val in mapping[feat].keys():
                 for order in mapping[feat][val].keys():
                     if order not in output:
-                        output[order] = empty_tag()
+                        output[order] = EMADA.Subtag()
                     for outfeat in mapping[feat][val][order]:
                         output[order][outfeat] = mapping[feat][val][order][outfeat]
 
             elif "#VAL#" in mapping[feat].keys():
                 for order in mapping[feat]["#VAL#"].keys():
                     if order not in output:
-                        output[order] = empty_tag()
+                        output[order] = EMADA.Subtag()
                     for outfeat in mapping[feat]["#VAL#"][order]:
                         output[order][outfeat] = mapping[feat]["#VAL#"][order][outfeat].replace("#VAL#", val)
     
     return output
 
 def orderTag(trg_feats, map_driver):
-    ordered = []
+    tag = EMADA.Tag()
     keys = [int(i) for i in trg_feats.keys()]
     keys.sort()
     keys = [str(i) for i in keys]
     base_order = int(map_driver['base_word_order'])
     
     for k in keys:
-        ordered.append(trg_feats[k])
+        tag.append(trg_feats[k])
         if int(k) == base_order:
-            ordered[-1]['orth'] = "base"
+            tag[-1]['orth'] = "base"
         elif int(k) < base_order:
-            ordered[-1]['orth'] = "proc"
+            tag[-1]['orth'] = "proc"
         elif int(k) > base_order:
-            ordered[-1]['orth'] = "enc"
+            tag[-1]['orth'] = "enc"
 
-    return ordered
+    return tag
 
 def addDefaults(tag, def_tag):
     for subtag in tag:

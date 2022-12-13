@@ -137,7 +137,7 @@ MAP	ENC0	0
 MAP	ENC0	1p_dobj	5	pos	pron	diac	nA	per	1	num	p		
 MAP	ENC0	1p_poss	5	pos	pron	diac	nA	per	1	num	p		
 MAP	ENC0	1p_pron	5	pos	pron	diac	nA	per	1	num	p		
-MAP	ENC0	1s_dobj	5	pos	pron	diac	nY	per	1	num	s		
+MAP	ENC0	1s_dobj	5	pos	pron	diac	niY	per	1	num	s		
 MAP	ENC0	1s_poss	5	pos	pron	diac	Y	per	1	num	s		
 MAP	ENC0	1s_pron	5	pos	pron	diac	Y	per	1	num	s		
 MAP	ENC0	2d_dobj	5	pos	pron	diac	kumA	per	2	num	d		

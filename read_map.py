@@ -1,6 +1,14 @@
 from pprint import pprint
 import json
 
+def main():
+    map = "MADA_to_EMADA"
+
+    tagset = read(f"./mappings/{map}.txt")
+
+    with open(f'./mappings/{map}.json', 'w') as fp:
+        json.dump(tagset, fp)
+
 def read(filename):
     tagset = {}
     tagset['features'] = []
@@ -42,9 +50,5 @@ def read(filename):
     
     return tagset
 
-map = "MADA_to_EMADA"
-
-tagset = read(f"./mappings/{map}.txt")
-
-with open(f'{map}.json', 'w') as fp:
-    json.dump(tagset, fp)
+if __name__ == "__main__":
+    main()
