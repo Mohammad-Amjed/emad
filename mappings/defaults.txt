@@ -1,35 +1,34 @@
-pos:*	per:* asp:* vox:* mod:* gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:prep	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:verb	per:* asp:* vox:* mod:* gen:* form_gen:* num:* form_num:* stt:na cas:na rat:na
-pos:adj_num	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:pron_dem	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:pron_rel	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:conj_sub	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:part_fut	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:noun_num	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:part_neg	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:abbrev	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:pron	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:noun_prop	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:pron_interrog	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:part_verb	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:part	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:adv	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:part_det	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:verb_pseudo	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:noun_quant	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:adv_interrog	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:adj_comp	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:interj	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:latin	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:digit	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:punc	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:part_restrict	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:adj	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:adv_rel	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:conj	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:noun	per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
-pos:part_interrog	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:part_voc	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:part_focus	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:pron_exclam	per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:prep	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:verb	lex:* per:* asp:* vox:* mod:* gen:* form_gen:* num:* form_num:* stt:na cas:na rat:na
+pos:adj_num	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:pron_dem	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:pron_rel	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:conj_sub	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_fut	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:noun_num	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:part_neg	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:abbrev	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:pron	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:noun_prop	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:pron_interrog	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:part_verb	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:adv	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:part_det	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:verb_pseudo	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:noun_quant	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:adv_interrog	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:adj_comp	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:interj	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:latin	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:digit	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:punc	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_restrict	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:adj	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:adv_rel	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:conj	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:noun	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:part_interrog	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_voc	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_focus	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:pron_exclam	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na

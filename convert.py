@@ -3,22 +3,30 @@ from pprint import pprint
 import EMADA
 
 # TODO include the BW map and cases
+# TODO make read_map.py modular
 
-# TODO handle DIAC
-# TODO handle the morphological analysis of each "subword"
+# TODO handle DIAC, 
+# diac has information that can help us determine whether lex for a pronoun is him or hum for example
+# this is only for the case of MADA but we need to handle it 
+# otherwise there would be loss of info in converting
+# TODO handle the lex analysis of each "subword"
 
 map_dir = "./mappings"
-src = "CAMEL_to_EMADA.json"
-#input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:c cas:a enc0:3mp_poss rat:i"
-input_tag = "PART+ADJ.MS+PRON"
+scheme = "MADA_to_EMADA"
+src = f"{scheme}.json"
+input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:c cas:a enc0:3mp_poss rat:i"
+#input_tag = "PART_DET+ADJ.MS+PRON"
 
 def main():
+    print(f"Conversion Scheme: {scheme}")
+    print(f"Input tag: {input_tag}")
+
     with open(f"{map_dir}/{src}", 'r') as f:
         map_driver = json.load(f)
     
     src_format = compileRE(map_driver)
     m = findMatch(src_format, input_tag)
-    if not m:
+    if not m or m.group(0) != input_tag:
         print("The input tag doesn't match the format of the source tag set")
         return
     else:
@@ -27,16 +35,20 @@ def main():
     output_tags = []
     for m in matches:
         src_vals = extractFeats(map_driver, m)
-        print(src_vals)
+        #print(src_vals)
         EMADA_feats = convertFeats(src_vals, map_driver)
 
         EMADA_tag = orderTag(EMADA_feats, map_driver)
         EMADA_tag.addDefaults()
 
-        print(EMADA_tag)
+        #print(EMADA_tag)
         if EMADA_tag not in output_tags:
             output_tags.append(EMADA_tag)
-    print(len(output_tags))
+    
+    print(f"The input tag maps to {len(output_tags)} tag(s) in EMADA:")
+    for tag in output_tags:
+        print("**************************")
+        print(tag)
 
 def compileRE(map_driver):
     src_format = map_driver["format"]

@@ -1,4 +1,4 @@
-FEATURES = ['orth', 'pos', 'per', 'asp', 'cas', 'stt', 'mod', 
+FEATURES = ['orth', 'lex', 'pos', 'per', 'asp', 'cas', 'stt', 'mod', 
             'vox', 'form_gen', 'gen', 'form_num', 'num', 'rat']
 
 def readDefaults(def_file):
@@ -16,19 +16,24 @@ def readDefaults(def_file):
 DEFAULTS = readDefaults("./mappings/defaults.txt")
 
 class Subtag(dict):
-    def __init__(self, pos = '*'):
+    def __init__(self, input_dict = {'pos': '*'}):
         for k in FEATURES:
-            self[k] = '-1'
-        self['pos'] = pos
+            if k in input_dict:
+                self[k] = input_dict[k]
+            else:
+                self[k] = '-1'
+        
+        if self['pos'] == '-1':
+            self['pos'] = "*"
 
-    def addDefaults(self, defaults):
+    def addDefaults(self):
         pos = self['pos']
-        if pos not in defaults:
+        if pos not in DEFAULTS:
             print(f"Error: pos {pos} not found in the defaults list")
         else:
             for feat in self:
                 if feat != 'orth' and self[feat] == '-1':
-                    self[feat] = defaults[pos][feat]
+                    self[feat] = DEFAULTS[pos][feat]
 
     def __eq__(self, object):
         for key in self:
@@ -45,17 +50,13 @@ class Subtag(dict):
     
 class Tag(list):
     def __init__(self, input = None):
-        self.defaults = DEFAULTS
-
         if input:
             for stag in input:
-                self.append(Subtag())
-                for key in stag:
-                    self[-1][key] = stag[key]
+                self.append(Subtag(stag))
     
     def addDefaults(self):
         for subtag in self:
-            subtag.addDefaults(self.defaults)
+            subtag.addDefaults()
 
     def __str__(self):
         string = ""
