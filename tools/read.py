@@ -1,15 +1,22 @@
 from pprint import pprint
 import json
 
-def main():
-    map = "MADA_to_EMADA"
+def Defaults(def_file):
+        def_dict = {}
+        with open(def_file) as f:
+            for line in f:
+                line = line.strip().split('\t')
+                pos = line[0].split(':')[1]
+                feat_val = [pair.split(':') for pair in line[1].split()]
+                def_tag = {pair[0]:pair[1] for pair in feat_val}
+                def_dict[pos] = def_tag
 
-    tagset = read(f"./mappings/{map}.txt")
+        return def_dict
 
-    with open(f'./mappings/{map}.json', 'w') as fp:
-        json.dump(tagset, fp)
+def map_to_json(map): # ex: map = "MADA_to_EMADA"
 
-def read(filename):
+    filename = f"./mappings/{map}.txt"
+
     tagset = {}
     tagset['features'] = []
     tagset['map'] = {}
@@ -46,9 +53,5 @@ def read(filename):
                         tagset['map'][feature][val][order][line[i]] = line[i+1]
                         i += 2
 
-
-    
-    return tagset
-
-if __name__ == "__main__":
-    main()
+    with open(f'./mappings/{map}.json', 'w') as fp:
+        json.dump(tagset, fp)

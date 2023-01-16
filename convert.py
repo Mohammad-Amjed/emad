@@ -1,5 +1,7 @@
 import re, json
 from pprint import pprint
+
+from tools import read
 import EMADA
 
 # TODO include the BW map and cases
@@ -12,14 +14,16 @@ import EMADA
 # TODO handle the lex analysis of each "subword"
 
 map_dir = "./mappings"
-scheme = "MADA_to_EMADA"
-src = f"{scheme}.json"
+map = "MADA_to_EMADA"
+src = f"{map}.json"
 input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:c cas:a enc0:3mp_poss rat:i"
 #input_tag = "PART_DET+ADJ.MS+PRON"
 
 def main():
-    print(f"Conversion Scheme: {scheme}")
+    print(f"Conversion map: {map}")
     print(f"Input tag: {input_tag}")
+
+    read.map_to_json(map)
 
     with open(f"{map_dir}/{src}", 'r') as f:
         map_driver = json.load(f)

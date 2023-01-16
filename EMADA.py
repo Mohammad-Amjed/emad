@@ -1,19 +1,10 @@
+from tools import read
+
 FEATURES = ['orth', 'lex', 'pos', 'per', 'asp', 'cas', 'stt', 'mod', 
             'vox', 'form_gen', 'gen', 'form_num', 'num', 'rat']
 
-def readDefaults(def_file):
-        def_dict = {}
-        with open(def_file) as f:
-            for line in f:
-                line = line.strip().split('\t')
-                pos = line[0].split(':')[1]
-                feat_val = [pair.split(':') for pair in line[1].split()]
-                def_tag = {pair[0]:pair[1] for pair in feat_val}
-                def_dict[pos] = def_tag
-
-        return def_dict
-
-DEFAULTS = readDefaults("./mappings/defaults.txt")
+# TODO add the pos:* to defaults file, ot figure out why I didn't include it before
+DEFAULTS = read.Defaults("./config/defaults.txt")
 
 class Subtag(dict):
     def __init__(self, input_dict = {'pos': '*'}):
@@ -28,13 +19,13 @@ class Subtag(dict):
 
     def addDefaults(self):
         pos = self['pos']
-        if pos not in DEFAULTS:
-            print(f"Error: pos {pos} not found in the defaults list")
-        else:
+        if pos in DEFAULTS:
             for feat in self:
                 if feat != 'orth' and self[feat] == '-1':
                     self[feat] = DEFAULTS[pos][feat]
-
+        else:
+            print(f"Error: pos {pos} not found in the defaults list")
+        
     def __eq__(self, object):
         for key in self:
             if key not in object:
