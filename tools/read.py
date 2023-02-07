@@ -1,5 +1,4 @@
-from pprint import pprint
-import json
+map_dir = "./mappings"
 
 def Defaults(def_file):
         def_dict = {}
@@ -13,13 +12,15 @@ def Defaults(def_file):
 
         return def_dict
 
-def map_to_json(map): # ex: map = "MADA_to_EMADA"
+def read_map(map): # ex: map = "MADA_to_EMADA"
 
-    filename = f"./mappings/{map}.txt"
+    filename = f"{map_dir}/{map}.txt"
 
-    tagset = {}
-    tagset['features'] = []
-    tagset['map'] = {}
+    tagset = {
+        'features': [], 
+        'map': {},
+        'format': None
+        }
     
     with open(filename, 'r') as f:
         for line in f:
@@ -34,6 +35,7 @@ def map_to_json(map): # ex: map = "MADA_to_EMADA"
 
             elif config == "CONFIG":
                 tagset[line[1]] = line[2]
+
             elif config == "MAP":
                 feature = line[1]
                 if not feature in tagset['map'].keys():
@@ -42,16 +44,59 @@ def map_to_json(map): # ex: map = "MADA_to_EMADA"
                 val = line[2]
                 tagset['map'][feature][val] = {}
 
-                i = 3
-                order = 3
-                while i < len(line):
-                    if line[i].isdigit():
-                        order = line[i]
-                        tagset['map'][feature][val][order] = {}
-                        i += 1
-                    else:
-                        tagset['map'][feature][val][order][line[i]] = line[i+1]
-                        i += 2
+                if len(line) >= 4:
+                    order = line[3]
+                    tagset['map'][feature][val][order] = {}
 
-    with open(f'./mappings/{map}.json', 'w') as fp:
-        json.dump(tagset, fp)
+                    i = 4
+                    while i < len(line):
+                        if line[i].isdigit():
+                            order = line[i]
+                            tagset['map'][feature][val][order] = {}
+                            i += 1
+                        else:
+                            tagset['map'][feature][val][order][line[i]] = line[i+1]
+                            i += 2
+
+    return tagset
+
+def read_map_rev(map):
+    filename = f"{map_dir}/{map}.txt"
+
+    map_dict = {
+        'map': {},
+        'format': None
+    }
+
+    with open(filename, 'r') as f:
+        for line in f:
+            line = line.strip().split('\t')
+            config = line[0]
+            
+            if config == "FORMAT":
+                map_dict['format'] = line[1]
+
+            elif config == "CONFIG":
+                map_dict[line[1]] = line[2]
+
+            elif config == "MAP":
+                out_feat = line[1]
+                out_val = line[2]
+
+                if len(line) > 4:
+                    order = line[3]
+                    feat_comb = [] #combination of features
+
+                    i = 4
+                    while i < len(line):
+                        if line[i].isdigit():
+                            order = line[i]
+                            i += 1
+                        else:
+                            feat_comb.append((order, line[i], line[i+1]))
+                            i += 2
+                    
+                    feat_comb = tuple(feat_comb)
+                    map_dict['map'][feat_comb] = (out_feat, out_val)
+            
+    return map_dict
