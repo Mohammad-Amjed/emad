@@ -25,7 +25,7 @@ with open(input_path, "r") as f:
 
             tags.append((bw_tag, mada_tag))
 
-output_path = "./data/parallel/BW_MADA.par"
+output_path = "./data/parallel/BW_GLFMADA.par"
 
 with open(output_path, "w") as f:
     for tag in tags:

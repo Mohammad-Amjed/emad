@@ -42,20 +42,26 @@ def read_map(map): # ex: map = "MADA_to_EMADA"
                     tagset['map'][feature] = {}
                 
                 val = line[2]
-                tagset['map'][feature][val] = {}
+                if not val in tagset['map'][feature].keys():
+                    tagset['map'][feature][val] = [{}]
+                else:
+                    tagset['map'][feature][val].append({})
 
                 if len(line) >= 4:
                     order = line[3]
-                    tagset['map'][feature][val][order] = {}
+                    tagset['map'][feature][val][-1][order] = {}
 
                     i = 4
                     while i < len(line):
                         if line[i].isdigit():
                             order = line[i]
-                            tagset['map'][feature][val][order] = {}
+                            if not order in tagset['map'][feature][val][-1].keys():
+                                tagset['map'][feature][val][-1][order] = {}
                             i += 1
                         else:
-                            tagset['map'][feature][val][order][line[i]] = line[i+1]
+                            out_feat = line[i]
+                            out_val = line[i+1]
+                            tagset['map'][feature][val][-1][order][out_feat] = out_val
                             i += 2
 
     return tagset

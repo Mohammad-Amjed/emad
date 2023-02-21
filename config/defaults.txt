@@ -8,7 +8,7 @@ pos:part_fut	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_nu
 pos:noun_num	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
 pos:part_neg	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
 pos:abbrev	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
-pos:pron	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
+pos:pron	lex:* per:* asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
 pos:noun_prop	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
 pos:pron_interrog	lex:* per:na asp:na vox:na mod:na gen:* form_gen:* num:* form_num:* stt:* cas:* rat:*
 pos:part_verb	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na

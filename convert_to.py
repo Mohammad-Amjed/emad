@@ -1,5 +1,6 @@
 import re
 from pprint import pprint
+from copy import deepcopy
 
 from tools import read
 import EMADA
@@ -17,7 +18,6 @@ import EMADA
 
 def main(map, input_tag):
     map_driver = read.read_map(map)
-
     #print(f"Conversion map: {map}\n")
     #print(f"Input tag: {input_tag}\n")
     
@@ -28,12 +28,18 @@ def main(map, input_tag):
     output_tags = []
     for m in matches:
         src_vals = extractFeats(map_driver, m)
-        EMADA_feats = convertFeats(src_vals, map_driver)
-        EMADA_tag = orderTag(EMADA_feats, map_driver)
-        EMADA_tag.addDefaults()
 
-        if EMADA_tag not in output_tags:
-            output_tags.append(EMADA_tag)
+        # This is now modified to return multiple possibilites if the one feature-value pair
+        # maps to many combinations possibly
+        EMADA_feats = convertFeats(src_vals, map_driver)
+        
+        for output in EMADA_feats:
+            EMADA_tag = orderTag(output, map_driver)
+            EMADA_tag.addDefaults()
+
+            if EMADA_tag not in output_tags:
+                output_tags.append(EMADA_tag)
+    
     #import pdb; pdb.set_trace()
     return output_tags
 
@@ -119,25 +125,35 @@ def extractFeats(map_driver, match):
     return vals
 
 def convertFeats(src_vals, map_driver):
-    output = {}
+    output = [{}]
     mapping = map_driver['map']
     for feat in src_vals.keys():
         if feat in mapping.keys():
             val = src_vals[feat]
             if val in mapping[feat].keys():
-                for order in mapping[feat][val].keys():
-                    if order not in output:
-                        output[order] = EMADA.Subtag()
-                    for outfeat in mapping[feat][val][order]:
-                        output[order][outfeat] = mapping[feat][val][order][outfeat]
+                new_output = []
+                for out in output:
+                    fixed_out = deepcopy(out)
+                    for combination in mapping[feat][val]:
+                        out = deepcopy(fixed_out)
+                        for order in combination:
+                            if order not in out:
+                                out[order] = EMADA.Subtag()
+                            for outfeat in combination[order]:
+                                out[order][outfeat] = combination[order][outfeat]
+                        new_output.append(out)
+                
+                output = deepcopy(new_output)
 
             elif "#VAL#" in mapping[feat].keys():
-                for order in mapping[feat]["#VAL#"].keys():
-                    if order not in output:
-                        output[order] = EMADA.Subtag()
-                    for outfeat in mapping[feat]["#VAL#"][order]:
-                        output[order][outfeat] = mapping[feat]["#VAL#"][order][outfeat].replace("#VAL#", val)
-    
+                # the following line assumes a map with #VAL# has only one combination of output features
+                for order in mapping[feat]["#VAL#"][0].keys():
+                    for out in output:
+                        if order not in out:
+                            out[order] = EMADA.Subtag()
+                        for outfeat in mapping[feat]["#VAL#"][0][order]:
+                            out[order][outfeat] = mapping[feat]["#VAL#"][0][order][outfeat].replace("#VAL#", val)
+        
     return output
 
 def orderTag(trg_feats, map_driver):
@@ -174,12 +190,13 @@ if __name__ == "__main__":
     #map = "MADA_to_EMADA"
     #input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na gen:f fgen:f num:s fnum:s stt:c cas:a enc0:3mp_poss rat:i"
     #input_tag = "diac:hw lex:huwa pos:pron prc3:0 prc2:0 prc1:0 prc0:0 per:3 asp:na vox:no mod:no gen:m fgen:m num:s fnum:s stt:no cas:no enc0:0 rat:na"
-    map = "CAMeL_to_EMADA"
-    input_tag = "PART+ADJ.MS+PRON"
+    #map = "CAMeL_to_EMADA"
+    #input_tag = "PART+ADJ.MS+PRON"
 
-    #map = "BW_to_EMADA"
+    map = "BW_to_EMADA"
     #input_tag = "Asm/NOUN+hA/POSS_PRON_3FS"
-        
+    input_tag = "Al/DET+>amiyn/NOUN+u/CASE_DEF_NOM"
+
     output_tags = main(map, input_tag)
     
     print(f"The input tag maps to {len(output_tags)} tag(s) in EMADA:")

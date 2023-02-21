@@ -2,17 +2,20 @@ import convert_from, convert_to, EMADA
 from tools import read
 
 def main():
-    map_driver = read.read_map("MADA_to_EMADA")
+    output_map_driver = read.read_map("BW_to_EMADA")
 
-    with open("./data/parallel/BW_MADA.par", "r") as f:
+    with open("./data/parallel/BW_MADA_atb.par", "r") as f:
         count, true_count, error_count, false_count = 0, 0, 0, 0
         flag = False
 
         for line in f:
-            count += 1
-            bw_tag, mada_tag = line.strip().split(",")
+            if not line[0] ==',': # quick solution to ignore if the token is ","
+                count += 1
+                bw_tag, mada_tag = line.strip().split(",")
+            else:
+                continue
 
-            output_tags = convert("BW", "MADA", bw_tag)
+            output_tags = convert("MADA", "BW", mada_tag)
             
             if output_tags == None:
                 error_count += 1
@@ -20,11 +23,12 @@ def main():
                     f.write(f"Error in converting tag: {bw_tag}\n")
             
             else:
-                matches = convert_to.findAllMatches(mada_tag, map_driver)
-                expected = [convert_to.extractFeats(map_driver, match) for match in matches]
-                print(bw_tag)
-                print(f"OUTPUT:\t{output_tags}")
-                print(f"EXPECTED:\t{expected}")
+                matches = convert_to.findAllMatches(bw_tag, output_map_driver)
+                #print(mada_tag)
+                expected = [convert_to.extractFeats(output_map_driver, match) for match in matches]
+                #print(bw_tag)
+                #print(f"OUTPUT:\t{output_tags}")
+                #print(f"EXPECTED:\t{expected}")
                 flag = False
                 for tag in output_tags:
                     if output_matches(tag, expected):
@@ -35,15 +39,22 @@ def main():
                 
                 if not flag:
                     false_count += 1
+                    with open("mismatch_log.txt", 'a') as f:
+                        f.write(f"Error in converting tag: {mada_tag}\n")
+                        f.write(f"output: {output_tags}\n")
+                        f.write(f"expected: {bw_tag}\n")
+                        f.write(f"expected captured: {expected}\n")
+                        f.write("---------------------------------------\n")
 
-            if count % 10 == 0:
+            if count % 100 == 0:
                 print(count)
+            
+            if count == 1000:
+                
+                print(count)
+                print(true_count + false_count)
+                print(true_count / (true_count + false_count), false_count / (true_count + false_count))
                 return
-
-        print(count)
-        print(true_count + false_count)
-        print(true_count / (true_count + false_count), false_count / (true_count + false_count))
-        return
     
 def output_matches(output, expected):
     for feat, val_list in output.items():
@@ -51,8 +62,9 @@ def output_matches(output, expected):
 
         for val in val_list:
             for tag in expected:
-                if tag[feat]==val:
-                    flag = True
+                if feat in tag:
+                    if tag[feat]==val or (tag[feat] in ['na', 'no'] and val in ['na', 'no']):
+                        flag = True
         
         if not flag:
             return False
@@ -81,5 +93,7 @@ def convert(src, trgt, input_tag):
 
 if __name__ == "__main__":
     with open("mismatch_log.txt", "w") as f:
+        pass
+    with open("error_log.txt", "w") as f:
         pass
     main()
