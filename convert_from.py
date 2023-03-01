@@ -3,8 +3,8 @@ import EMADA
 import re
 from pprint import pprint
 
-def main(map, input_tag):
-    map_driver = read.read_map_rev(map)
+def main(map, input_tag, map_driver):
+    #print(map_driver)
     #pprint(map_driver)
     
     ordered_tags = addOrder(input_tag, map_driver)

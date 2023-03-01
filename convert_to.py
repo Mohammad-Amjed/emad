@@ -16,8 +16,7 @@ import EMADA
 
 
 
-def main(map, input_tag):
-    map_driver = read.read_map(map)
+def main(map, input_tag, map_driver):
     #print(f"Conversion map: {map}\n")
     #print(f"Input tag: {input_tag}\n")
     

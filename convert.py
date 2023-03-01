@@ -7,6 +7,8 @@ def main():
     tags ={}
 
     output_map_driver = read.read_map(f"{output}_to_EMADA")
+    output_map_driver_rev = read.read_map_rev(f"{output}_to_EMADA")
+    input_map_driver = read.read_map(f"{input}_to_EMADA")
 
     with open("./data/parallel/BW_MADA_atb.par", "r") as f:
         count, true_count, error_count, false_count = 0, 0, 0, 0
@@ -20,7 +22,7 @@ def main():
             else:
                 continue
         
-            output_tags = convert(input, output, tags[input])
+            output_tags = convert(input, output, tags[input], input_map_driver, output_map_driver_rev)
             
             if output_tags == None:
                 error_count += 1
@@ -73,7 +75,7 @@ def main():
                 print(i, count)
                 #print(tags["BW2"], tags["MADA"], tags["CATiB6"])
             
-            if count == 10000:
+            if count == 10:
                 
                 print(count)
                 print(true_count + false_count)
@@ -101,18 +103,18 @@ def output_matches(output, expected):
     
     return True
 
-def convert(src, trgt, input_tag):
+def convert(src, trgt, input_tag, input_map_driver, output_map_driver):
     map = f"{src}_to_EMADA"
     #input_tag = "Asm/NOUN+hA/POSS_PRON_3FS"
 
-    intermediate_tags = convert_to.main(map, input_tag)
+    intermediate_tags = convert_to.main(map, input_tag, input_map_driver)
     if intermediate_tags == None:
         return None
     
     map = f"{trgt}_to_EMADA"
     output_tags = []
     for tag in intermediate_tags:
-        output = convert_from.main(map, tag)
+        output = convert_from.main(map, tag, output_map_driver)
         if output != None:
             output_tags += output
         else:
