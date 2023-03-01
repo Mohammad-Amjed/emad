@@ -58,12 +58,12 @@ MAP	POS	PART_VOC	3	pos	part_voc
 MAP	POS	PART_INTERROG	3	pos	part_interrog
 MAP	POS	PART_RESTRICT	3	pos	part_restrict
 MAP	POS	PART_FOCUS	3	pos	part_focus
-MAP	POS	PART_EMPHATIC	3	pos	part_emphatic
+MAP	POS	PART_EMPHATIC	3	pos	part_emph
 MAP	POS	PART_RC	3	pos	part_rc
 MAP	POS	CONJ_SUB	3	pos	conj_sub
 MAP	POS	PREP	3	pos	prep
 MAP	POS	CONJ	3	pos	conj
-MAP	POS	PART_CONNECT	3	pos	part_connect
+MAP	POS	PART_CONNECT	3	pos	part_conn
 MAP	POS	DIGIT	3	pos	digit
 MAP	POS	ABBREV	3	pos	abbrev
 MAP	POS	INTERJ	3	pos	interj

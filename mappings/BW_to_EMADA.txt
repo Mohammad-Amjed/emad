@@ -13,7 +13,7 @@ CONFIG	base_word_order	4
 CONFIG	max_word_order	6
 MAP	PRC3	>a/INTERROG_PART	0	pos	part_interrog	lex	>a							
 MAP	PRC2	fa/CONJ	1	pos	conj	lex	fa							
-MAP	PRC2	fa/CONNEC_PART	1	pos	par_conn	lex	fa							
+MAP	PRC2	fa/CONNEC_PART	1	pos	part_conn	lex	fa							
 MAP	PRC2	fa/RC_PART	1	pos	part_rc	lex	fa							
 MAP	PRC2	fa/SUB_CONJ	1	pos	conj_sub	lex	fa							
 MAP	PRC2	wa/CONJ	1	pos	conj	lex	wa							

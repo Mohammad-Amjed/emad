@@ -22,13 +22,14 @@ def main(map, input_tag):
     #print(f"Input tag: {input_tag}\n")
     
     matches = findAllMatches(input_tag, map_driver)
+    #print(matches)
     if matches == []:
         return None
     
     output_tags = []
     for m in matches:
         src_vals = extractFeats(map_driver, m)
-
+        #print(src_vals)
         # This is now modified to return multiple possibilites if the one feature-value pair
         # maps to many combinations possibly
         EMADA_feats = convertFeats(src_vals, map_driver)
@@ -77,8 +78,9 @@ def findAllMatches(input_tag, map_driver):
     return matches
 
 def findMatch(src_format, input_tag):
+    #print(src_format)
     src_re = re.compile(src_format)
-    m = src_re.match(input_tag)
+    m = src_re.fullmatch(input_tag)
     return m
 
 def compareMatches(map_driver, m1, m2):
@@ -187,15 +189,18 @@ def addDefaults(tag, def_tag):
     return tag
 
 if __name__ == "__main__":
-    #map = "MADA_to_EMADA"
+    map = "MADA_to_EMADA"
     #input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na gen:f fgen:f num:s fnum:s stt:c cas:a enc0:3mp_poss rat:i"
-    #input_tag = "diac:hw lex:huwa pos:pron prc3:0 prc2:0 prc1:0 prc0:0 per:3 asp:na vox:no mod:no gen:m fgen:m num:s fnum:s stt:no cas:no enc0:0 rat:na"
+    input_tag = "diac:Al>umamu lex:>um~ap pos:noun_prop prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:f form_num:s num:p stt:d cas:n enc0:0 rat:i"
     #map = "CAMeL_to_EMADA"
     #input_tag = "PART+ADJ.MS+PRON"
 
-    map = "BW_to_EMADA"
-    #input_tag = "Asm/NOUN+hA/POSS_PRON_3FS"
-    input_tag = "Al/DET+>amiyn/NOUN+u/CASE_DEF_NOM"
+    map = "BW2_to_EMADA"
+    input_tag = "fa/CONNEC_PART+<in~a/PSEUDO_VERB"
+    input_tag = "ya/IV3FP+taEar~aD/IV+na/IVSUFF_SUBJ:FP"
+    
+    #map = "CATiB6_to_EMADA"
+    #input_tag = "PRT+NOM+NOM"
 
     output_tags = main(map, input_tag)
     

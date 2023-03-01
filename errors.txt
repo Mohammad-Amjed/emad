@@ -1,4 +1,0 @@
-A/IV1S+by/IV
-OUTPUT: [{'VPREF': ['|/IV1S'], 'STEM': ['VERB']}]
-EXPECTED:       [{'LEX': 'A/IV1S+by', 'STEM': 'IV'}]
-

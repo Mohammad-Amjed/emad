@@ -1,0 +1,2 @@
+fa/CONJ+li/PREP+Al/DET+mar~/NOUN+ap/NSUFF_FEM_SG+i/CASE_DEF_GEN,diac:falilmar~api lex:mar~ap pos:noun prc3:0 prc2:fa_conj prc1:li_prep prc0:Al_det per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:d cas:g enc0:0 rat:i,PRT+PRT+NOM
+wa/CONJ+li/PREP+Al/DET+mar~/NOUN+ap/NSUFF_FEM_SG+i/CASE_DEF_GEN,diac:walilmar~api lex:mar~ap pos:noun prc3:0 prc2:wa_conj prc1:li_prep prc0:Al_det per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:d cas:g enc0:0 rat:i,PRT+PRT+NOM

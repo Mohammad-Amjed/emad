@@ -5,6 +5,7 @@ from pprint import pprint
 
 def main(map, input_tag):
     map_driver = read.read_map_rev(map)
+    #pprint(map_driver)
     
     ordered_tags = addOrder(input_tag, map_driver)
     if ordered_tags == []:
@@ -62,7 +63,8 @@ def addOrder(input_tag, map_driver):
                                 order_list[-1].append(ord)
 
         if len(order_list[-1]) == 0:
-            print(f"Error: subtag {sub_tag} is not compatible with the map")
+            #order_list = order_list[:-1]
+            print(f"Warning: subtag {sub_tag} is not compatible with the map")
 
     #print(order_list)
     ordered_tags = make_ordered_tags(input_tag, order_list)
@@ -81,11 +83,18 @@ def make_ordered_tags(input_tag, order_list):
     #general case
     ordered_tags = make_ordered_tags(input_tag[1:], order_list[1:])
     new_ordered_tags = []
-    for ord in order_list[0]:
-        for tag in ordered_tags:
-            if order_can_be_inserted(ord, tag):
-                new_dict = {str(ord): input_tag[0]}
-                new_ordered_tags.append({**tag, **new_dict})
+    if len(order_list[0]) > 0:
+        for ord in order_list[0]:
+            if len(ordered_tags) > 0:
+                for tag in ordered_tags:
+                    if order_can_be_inserted(ord, tag):
+                        new_dict = {str(ord): input_tag[0]}
+                        new_ordered_tags.append({**tag, **new_dict})
+            else:
+                return make_ordered_tags([input_tag[0]], [order_list[0]])
+        
+    else:
+        return ordered_tags
     
     return new_ordered_tags
 
@@ -120,13 +129,15 @@ def output_feat_dict(ordered_tag, map_driver):
     #print(ordered_tag)
     for feat_comb in map_driver['map']:
         #print('h')
+        #pprint(ordered_tag)
+        #print(feat_comb)
         if tag_compatible(ordered_tag, feat_comb):
-            out_feat, out_val = map_driver['map'][feat_comb]
-            
-            if out_feat not in feat_dict:
-                feat_dict[out_feat] = []
-            feat_dict[out_feat].append(out_val)
-    
+            for out_feat, out_val in map_driver['map'][feat_comb]:
+                #print("h", out_feat, out_val)
+                if out_feat not in feat_dict:
+                    feat_dict[out_feat] = []
+                feat_dict[out_feat].append(out_val)
+    #pprint(map_driver['map'])
     return feat_dict
 
 def generate_output_tags(feat_dict, output_format):
@@ -156,11 +167,17 @@ def generate_output_tags(feat_dict, output_format):
 
 if __name__ == "__main__":
     map = "BW_to_EMADA"
+    
     input_tag = EMADA.Tag([
         {'orth': 'proc', 'lex': 'Al', 'pos': 'part_det', 'per': 'na', 'asp': 'na', 'cas': 'na', 'stt': 'na', 'mod': 'na', 'vox': 'na', 'form_gen': 'na', 'gen': 'na', 'form_num': 'na', 'num': 'na', 'rat': 'na'},
         {'orth': 'base', 'per': 'na', 'asp': 'na', 'cas': 'a', 'stt': 'c', 'mod': 'na', 'vox': 'na', 'form_gen': 'm', 'gen': 'm', 'form_num': 's', 'num': 's', 'rat': 'i', 'pos': 'noun'}, 
         {'orth': 'enc', 'per': '1', 'asp': 'na', 'cas': 'g', 'stt': '*', 'mod': 'na', 'vox': 'na', 'form_gen': '*', 'gen': '*', 'form_num': '*', 'num': 's', 'rat': '*', 'pos': 'pron'}
         ])
-    
+    '''
+    input_tag = EMADA.Tag([
+        {'orth': 'proc', 'lex': 'Al', 'pos': 'part_det', 'per': 'na', 'asp': 'na', 'cas': 'na', 'stt': 'na', 'mod': 'na', 'vox': 'na', 'form_gen': 'na', 'gen': 'na', 'form_num': 'na', 'num': 'na', 'rat': 'na'},
+        {'orth': 'base', 'lex': '>um~ap', 'pos': 'noun_prop', 'per': 'na', 'asp': 'na', 'cas': 'n', 'stt': 'd', 'mod':'na', 'vox':'na', 'form_gen':'m', 'gen':'f', 'form_num':'s', 'num': 'p', 'rat': 'i'}, 
+        ])
+    '''
     output_tags = main(map, input_tag)
     pprint(output_tags)

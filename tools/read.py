@@ -103,6 +103,9 @@ def read_map_rev(map):
                             i += 2
                     
                     feat_comb = tuple(feat_comb)
-                    map_dict['map'][feat_comb] = (out_feat, out_val)
+                    if feat_comb not in map_dict['map']:
+                        map_dict['map'][feat_comb] = [(out_feat, out_val)]
+                    else:
+                        map_dict['map'][feat_comb].append((out_feat, out_val))
             
     return map_dict

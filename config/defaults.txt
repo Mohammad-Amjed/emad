@@ -32,3 +32,9 @@ pos:part_interrog	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na fo
 pos:part_voc	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
 pos:part_focus	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
 pos:pron_exclam	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_conn	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_rc	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_emph	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_sub	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_jus	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
+pos:part_prog	lex:* per:na asp:na vox:na mod:na gen:na form_gen:na num:na form_num:na stt:na cas:na rat:na
