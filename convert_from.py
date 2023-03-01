@@ -167,6 +167,7 @@ def generate_output_tags(feat_dict, output_format):
 
 if __name__ == "__main__":
     map = "BW_to_EMADA"
+    map_driver_rev = read.read_map_rev(map)
     
     input_tag = EMADA.Tag([
         {'orth': 'proc', 'lex': 'Al', 'pos': 'part_det', 'per': 'na', 'asp': 'na', 'cas': 'na', 'stt': 'na', 'mod': 'na', 'vox': 'na', 'form_gen': 'na', 'gen': 'na', 'form_num': 'na', 'num': 'na', 'rat': 'na'},
@@ -179,5 +180,5 @@ if __name__ == "__main__":
         {'orth': 'base', 'lex': '>um~ap', 'pos': 'noun_prop', 'per': 'na', 'asp': 'na', 'cas': 'n', 'stt': 'd', 'mod':'na', 'vox':'na', 'form_gen':'m', 'gen':'f', 'form_num':'s', 'num': 'p', 'rat': 'i'}, 
         ])
     '''
-    output_tags = main(map, input_tag)
+    output_tags = main(map, input_tag, map_driver_rev)
     pprint(output_tags)

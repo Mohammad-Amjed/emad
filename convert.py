@@ -75,7 +75,7 @@ def main():
                 print(i, count)
                 #print(tags["BW2"], tags["MADA"], tags["CATiB6"])
             
-            if count == 10:
+            if count == 10000:
                 
                 print(count)
                 print(true_count + false_count)

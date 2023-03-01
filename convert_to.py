@@ -200,8 +200,8 @@ if __name__ == "__main__":
     
     #map = "CATiB6_to_EMADA"
     #input_tag = "PRT+NOM+NOM"
-
-    output_tags = main(map, input_tag)
+    input_map_driver = read.read_map(map)
+    output_tags = main(map, input_tag, input_map_driver)
     
     print(f"The input tag maps to {len(output_tags)} tag(s) in EMADA:")
     for tag in output_tags:
