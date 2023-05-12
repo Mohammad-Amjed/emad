@@ -1,0 +1,346 @@
+Error in converting tag: pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:d num:d stt:d cas:a enc0:0 rat:i
+expected: CONJ+DET+NOUN+NSUFF_MASC_DU_ACC_POSS
+feature		expected		output
+PRC2		CONJ		['CONJ']		
+PRC0		DET		['DET']		
+STEM		NOUN		['NOUN']		
+SUF		NSUFF_MASC_DU_ACC_POSS		['NSUFF_MASC_DU_ACC', 'NSUFF_MASC_DU']		
+----------------------------------------------
+Error in converting tag: pos:adv prc3:0 prc2:wa_conj prc1:0 prc0:lA_neg per:na asp:na vox:na mod:na form_gen:m gen:u form_num:s num:u stt:i cas:u enc0:0 rat:y
+expected: CONJ+NEG_PART+ADV
+feature		output
+PRC2		['CONJ']		
+STEM		['ADV']		
+SUF		['CASE_INDEF_NOM', 'CASE_INDEF_ACC', 'CASE_INDEF_GEN']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:wa_conj prc1:li_sub prc0:0 per:1 asp:i vox:a mod:s form_gen:m gen:m form_num:p num:p stt:na cas:na enc0:0 rat:n
+expected: CONJ+PREP+IV1P+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC2		CONJ		['CONJ']		
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV1P		['IV1P']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:1P_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:SJ', 'NSUFF_MASC_PL']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:wa_conj prc1:li_sub prc0:0 per:1 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: CONJ+PREP+IV1S+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC2		CONJ		['CONJ']		
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV1S		['IV1S']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:1S_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:wa_conj prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: CONJ+PREP+IV3FS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC2		CONJ		['CONJ']		
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3FS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:wa_conj prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:3ms_dobj rat:n
+expected: CONJ+PREP+IV3MS+IV+IVSUFF_MOOD:S+IVSUFF_DO:3MS
+feature		expected		output
+PRC2		CONJ		['CONJ']		
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3MS_MOOD:S']		
+ENC0		IVSUFF_DO:3MS		['IVSUFF_DO:3MS', 'PVSUFF_DO:3MS', 'CVSUFF_DO:3MS', 'POSS_PRON_3MS', 'PRON_3MS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:wa_conj prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: CONJ+PREP+IV3MS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC2		CONJ		['CONJ']		
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3MS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:lA_neg per:na asp:na vox:na mod:na form_gen:m gen:m form_num:s num:s stt:i cas:a enc0:0 rat:i
+expected: CONJ+PSEUDO_VERB+NOUN+CASE_DEF_ACC
+feature		output
+PRC2		['CONJ']		
+STEM		['NOUN']		
+SUF		['CASE_INDEF_ACC']		
+----------------------------------------------
+Error in converting tag: pos:noun prc3:0 prc2:fa_conn prc1:0 prc0:lA_neg per:na asp:na vox:na mod:na form_gen:m gen:m form_num:s num:s stt:i cas:a enc0:0 rat:i
+expected: CONNEC_PART+PSEUDO_VERB+NOUN+CASE_DEF_ACC
+feature		output
+PRC2		['CONNEC_PART']		
+STEM		['NOUN']		
+SUF		['CASE_INDEF_ACC']		
+----------------------------------------------
+Error in converting tag: pos:adj prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:d num:d stt:d cas:a enc0:0 rat:n
+expected: DET+ADJ+NSUFF_MASC_DU_ACC_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		ADJ		['ADJ']		
+SUF		NSUFF_MASC_DU_ACC_POSS		['NSUFF_MASC_DU_ACC', 'NSUFF_MASC_DU']		
+----------------------------------------------
+Error in converting tag: pos:adj prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:p num:p stt:d cas:a enc0:0 rat:n
+expected: DET+ADJ+NSUFF_MASC_PL_ACC_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		ADJ		['ADJ']		
+SUF		NSUFF_MASC_PL_ACC_POSS		['NSUFF_MASC_PL_ACC', 'NSUFF_MASC_PL']		
+----------------------------------------------
+Error in converting tag: pos:adj prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:p num:p stt:d cas:g enc0:0 rat:n
+expected: DET+ADJ+NSUFF_MASC_PL_GEN_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		ADJ		['ADJ']		
+SUF		NSUFF_MASC_PL_GEN_POSS		['NSUFF_MASC_PL_GEN', 'NSUFF_MASC_PL']		
+----------------------------------------------
+Error in converting tag: pos:noun prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:d num:d stt:d cas:n enc0:0 rat:i
+expected: DET+NOUN+NSUFF_MASC_DU_NOM_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		NOUN		['NOUN']		
+SUF		NSUFF_MASC_DU_NOM_POSS		['NSUFF_MASC_DU_NOM', 'NSUFF_MASC_DU']		
+----------------------------------------------
+Error in converting tag: pos:noun_num prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:f gen:f form_num:d num:p stt:d cas:a enc0:0 rat:n
+expected: DET+NOUN_NUM+NSUFF_FEM_DU_ACC_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		NOUN_NUM		['NOUN_NUM']		
+SUF		NSUFF_FEM_DU_ACC_POSS		['NSUFF_FEM_DU_ACC', 'NSUFF_FEM_DU']		
+----------------------------------------------
+Error in converting tag: pos:noun_num prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:f gen:f form_num:d num:d stt:d cas:g enc0:0 rat:n
+expected: DET+NOUN_NUM+NSUFF_FEM_DU_GEN_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		NOUN_NUM		['NOUN_NUM']		
+SUF		NSUFF_FEM_DU_GEN_POSS		['NSUFF_FEM_DU_GEN', 'NSUFF_FEM_DU']		
+----------------------------------------------
+Error in converting tag: pos:noun_num prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:d num:d stt:d cas:g enc0:0 rat:n
+expected: DET+NOUN_NUM+NSUFF_MASC_DU_GEN_POSS
+feature		expected		output
+PRC0		DET		['DET']		
+STEM		NOUN_NUM		['NOUN_NUM']		
+SUF		NSUFF_MASC_DU_GEN_POSS		['NSUFF_MASC_DU_GEN', 'NSUFF_MASC_DU']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:sa_fut prc0:0 per:2 asp:i vox:a mod:i form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: FUT_PART+IV2MS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		FUT_PART		['FUT_PART']		
+VPREF		IV2MS		['IV2MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:I', 'IVSUFF_SUBJ:2MS_MOOD:I']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:sa_fut prc0:0 per:2 asp:i vox:p mod:i form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: FUT_PART+IV2MS+IV_PASS+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		FUT_PART		['FUT_PART']		
+VPREF		IV2MS		['IV2MS']		
+STEM		IV_PASS		['IV_PASS', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:I', 'IVSUFF_SUBJ:2MS_MOOD:I']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:sa_fut prc0:0 per:3 asp:i vox:a mod:i form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:3ms_dobj rat:n
+expected: FUT_PART+IV3FS+IV+IVSUFF_MOOD:J+IVSUFF_DO:3MS
+feature		expected		output
+PRC1		FUT_PART		['FUT_PART']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:J		['IVSUFF_MOOD:I', 'IVSUFF_SUBJ:3FS_MOOD:I']		
+ENC0		IVSUFF_DO:3MS		['IVSUFF_DO:3MS', 'PVSUFF_DO:3MS', 'CVSUFF_DO:3MS', 'POSS_PRON_3MS', 'PRON_3MS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:sa_fut prc0:0 per:3 asp:i vox:a mod:i form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: FUT_PART+IV3FS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		FUT_PART		['FUT_PART']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:I', 'IVSUFF_SUBJ:3FS_MOOD:I']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:sa_fut prc0:0 per:3 asp:i vox:p mod:i form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: FUT_PART+IV3MS+IV_PASS+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		FUT_PART		['FUT_PART']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV_PASS		['IV_PASS', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:I', 'IVSUFF_SUBJ:3MS_MOOD:I']		
+----------------------------------------------
+Error in converting tag: pos:adv prc3:0 prc2:0 prc1:0 prc0:lA_neg per:na asp:na vox:na mod:na form_gen:m gen:u form_num:s num:u stt:i cas:u enc0:0 rat:y
+expected: NEG_PART+ADV
+feature		output
+STEM		['ADV']		
+SUF		['CASE_INDEF_NOM', 'CASE_INDEF_ACC', 'CASE_INDEF_GEN']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:0 prc0:lA_neg per:3 asp:i vox:a mod:i form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: NEG_PART+IV3FS+IV+IVSUFF_MOOD:I
+feature		output
+VPREF		['IV3FS']		
+STEM		['IV', 'VERB']		
+SUF		['IVSUFF_MOOD:I', 'IVSUFF_SUBJ:3FS_MOOD:I']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:0 prc0:mA_neg per:3 asp:p vox:u mod:i form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: NEG_PART+PV+PVSUFF_SUBJ:3FS
+feature		output
+STEM		['PV', 'PV_PASS', 'VERB']		
+SUF		['PVSUFF_SUBJ:3FS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:0 prc0:mA_neg per:3 asp:p vox:u mod:i form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: NEG_PART+PV+PVSUFF_SUBJ:3MS
+feature		output
+STEM		['PV', 'PV_PASS', 'VERB']		
+SUF		['PVSUFF_SUBJ:3MS']		
+----------------------------------------------
+Error in converting tag: pos:noun prc3:0 prc2:0 prc1:li_prep prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:m form_num:p num:p stt:d cas:g enc0:0 rat:i
+expected: PREP+DET+NOUN+NSUFF_MASC_PL_GEN_POSS
+feature		expected		output
+PRC1		PREP		['PREP']		
+PRC0		DET		['DET']		
+STEM		NOUN		['NOUN']		
+SUF		NSUFF_MASC_PL_GEN_POSS		['NSUFF_MASC_PL_GEN', 'NSUFF_MASC_PL']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:1 asp:i vox:a mod:s form_gen:m gen:m form_num:p num:p stt:na cas:na enc0:0 rat:n
+expected: PREP+IV1P+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV1P		['IV1P']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:1P_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:SJ', 'NSUFF_MASC_PL']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:1 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:3ms_dobj rat:n
+expected: PREP+IV1S+IV+IVSUFF_MOOD:S+IVSUFF_DO:3MS
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV1S		['IV1S']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:1S_MOOD:S']		
+ENC0		IVSUFF_DO:3MS		['IVSUFF_DO:3MS', 'PVSUFF_DO:3MS', 'CVSUFF_DO:3MS', 'POSS_PRON_3MS', 'PRON_3MS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:1 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV1S+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV1S		['IV1S']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:1S_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:2 asp:i vox:a mod:u form_gen:m gen:m form_num:d num:d stt:na cas:na enc0:0 rat:n
+expected: PREP+IV2D+IV+IVSUFF_SUBJ:D_MOOD:SJ
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV2D		['IV2D']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_SUBJ:D_MOOD:SJ		['IVSUFF_MOOD:I', 'IVSUFF_MOOD:J', 'IVSUFF_MOOD:S', 'IVSUFF_MOOD:E', 'IVSUFF_MOOD:X', 'IVSUFF_SUBJ:2D_MOOD:I', 'IVSUFF_SUBJ:D_MOOD:I', 'IVSUFF_SUBJ:2D_MOOD:J', 'IVSUFF_SUBJ:2D_MOOD:S', 'IVSUFF_SUBJ:3MD_MOOD:J', 'IVSUFF_SUBJ:D_MOOD:SJ', 'IVSUFF_SUBJ:2D_MOOD:E', 'IVSUFF_SUBJ:2D_MOOD:X', 'NSUFF_MASC_DU']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:2 asp:i vox:a mod:u form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV2FS+IV+IVSUFF_SUBJ:2FS_MOOD:SJ
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV2FS		['IV2FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_SUBJ:2FS_MOOD:SJ		['IVSUFF_MOOD:I', 'IVSUFF_MOOD:J', 'IVSUFF_MOOD:S', 'IVSUFF_MOOD:E', 'IVSUFF_MOOD:X', 'IVSUFF_SUBJ:2FS_MOOD:I', 'IVSUFF_SUBJ:2FS_MOOD:J', 'IVSUFF_SUBJ:2FS_MOOD:S', 'IVSUFF_SUBJ:2FS_MOOD:SJ', 'IVSUFF_SUBJ:2FS_MOOD:E', 'IVSUFF_SUBJ:2FS_MOOD:X']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:2 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV2MS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV2MS		['IV2MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:2MS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:3d_dobj rat:n
+expected: PREP+IV3FS+IV+IVSUFF_MOOD:S+IVSUFF_DO:3D
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3FS_MOOD:S']		
+ENC0		IVSUFF_DO:3D		['IVSUFF_DO:3D', 'PVSUFF_DO:3D', 'CVSUFF_DO:3D', 'POSS_PRON_3D', 'PRON_3D']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:3fs_dobj rat:n
+expected: PREP+IV3FS+IV+IVSUFF_MOOD:S+IVSUFF_DO:3FS
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3FS_MOOD:S']		
+ENC0		IVSUFF_DO:3FS		['IVSUFF_DO:3FS', 'PVSUFF_DO:3FS', 'CVSUFF_DO:3FS', 'POSS_PRON_3FS', 'PRON_3FS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV3FS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3FS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:p mod:s form_gen:f gen:f form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV3FS+IV_PASS+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3FS		['IV3FS']		
+STEM		IV_PASS		['IV_PASS', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3FS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:u form_gen:m gen:m form_num:d num:d stt:na cas:na enc0:0 rat:n
+expected: PREP+IV3MD+IV+IVSUFF_SUBJ:D_MOOD:SJ
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MD		['IV3MD']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_SUBJ:D_MOOD:SJ		['IVSUFF_MOOD:I', 'IVSUFF_MOOD:J', 'IVSUFF_MOOD:S', 'IVSUFF_MOOD:E', 'IVSUFF_MOOD:X', 'IVSUFF_SUBJ:3MD_MOOD:I', 'IVSUFF_SUBJ:D_MOOD:I', 'IVSUFF_SUBJ:3MD_MOOD:J', 'IVSUFF_SUBJ:3MD_MOOD:S', 'IVSUFF_SUBJ:D_MOOD:SJ', 'IVSUFF_SUBJ:3MD_MOOD:E', 'IVSUFF_SUBJ:3MD_MOOD:X', 'NSUFF_MASC_DU']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:u form_gen:m gen:m form_num:p num:p stt:na cas:na enc0:3fs_dobj rat:n
+expected: PREP+IV3MP+IV+IVSUFF_SUBJ:MP_MOOD:SJ+IVSUFF_DO:3FS
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MP		['IV3MP']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_SUBJ:MP_MOOD:SJ		['IVSUFF_MOOD:I', 'IVSUFF_MOOD:J', 'IVSUFF_MOOD:S', 'IVSUFF_MOOD:E', 'IVSUFF_MOOD:X', 'IVSUFF_SUBJ:3MP_MOOD:I', 'IVSUFF_SUBJ:MP_MOOD:I', 'IVSUFF_SUBJ:3MP_MOOD:J', 'IVSUFF_SUBJ:3MP_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:J', 'IVSUFF_SUBJ:MP_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:SJ', 'IVSUFF_SUBJ:3MP_MOOD:E', 'IVSUFF_SUBJ:MP_MOOD:E', 'IVSUFF_SUBJ:3MP_MOOD:X', 'IVSUFF_SUBJ:MP_MOOD:X', 'NSUFF_MASC_PL']		
+ENC0		IVSUFF_DO:3FS		['IVSUFF_DO:3FS', 'PVSUFF_DO:3FS', 'CVSUFF_DO:3FS', 'POSS_PRON_3FS', 'PRON_3FS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:u form_gen:m gen:m form_num:p num:p stt:na cas:na enc0:0 rat:n
+expected: PREP+IV3MP+IV+IVSUFF_SUBJ:MP_MOOD:SJ
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MP		['IV3MP']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_SUBJ:MP_MOOD:SJ		['IVSUFF_MOOD:I', 'IVSUFF_MOOD:J', 'IVSUFF_MOOD:S', 'IVSUFF_MOOD:E', 'IVSUFF_MOOD:X', 'IVSUFF_SUBJ:3MP_MOOD:I', 'IVSUFF_SUBJ:MP_MOOD:I', 'IVSUFF_SUBJ:3MP_MOOD:J', 'IVSUFF_SUBJ:3MP_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:J', 'IVSUFF_SUBJ:MP_MOOD:S', 'IVSUFF_SUBJ:MP_MOOD:SJ', 'IVSUFF_SUBJ:3MP_MOOD:E', 'IVSUFF_SUBJ:MP_MOOD:E', 'IVSUFF_SUBJ:3MP_MOOD:X', 'IVSUFF_SUBJ:MP_MOOD:X', 'NSUFF_MASC_PL']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:3fs_dobj rat:n
+expected: PREP+IV3MS+IV+IVSUFF_MOOD:S+IVSUFF_DO:3FS
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3MS_MOOD:S']		
+ENC0		IVSUFF_DO:3FS		['IVSUFF_DO:3FS', 'PVSUFF_DO:3FS', 'CVSUFF_DO:3FS', 'POSS_PRON_3FS', 'PRON_3FS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:3ms_dobj rat:n
+expected: PREP+IV3MS+IV+IVSUFF_MOOD:S+IVSUFF_DO:3MS
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3MS_MOOD:S']		
+ENC0		IVSUFF_DO:3MS		['IVSUFF_DO:3MS', 'PVSUFF_DO:3MS', 'CVSUFF_DO:3MS', 'POSS_PRON_3MS', 'PRON_3MS']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:a mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV3MS+IV+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV		['IV', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3MS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:verb prc3:0 prc2:0 prc1:li_sub prc0:0 per:3 asp:i vox:p mod:s form_gen:m gen:m form_num:s num:s stt:na cas:na enc0:0 rat:n
+expected: PREP+IV3MS+IV_PASS+IVSUFF_MOOD:S
+feature		expected		output
+PRC1		PREP		['SUB_CONJ']		
+VPREF		IV3MS		['IV3MS']		
+STEM		IV_PASS		['IV_PASS', 'VERB']		
+SUF		IVSUFF_MOOD:S		['IVSUFF_MOOD:S', 'IVSUFF_SUBJ:3MS_MOOD:S']		
+----------------------------------------------
+Error in converting tag: pos:noun prc3:0 prc2:0 prc1:0 prc0:lA_neg per:na asp:na vox:na mod:na form_gen:m gen:m form_num:s num:s stt:i cas:a enc0:0 rat:i
+expected: PSEUDO_VERB+NOUN+CASE_DEF_ACC
+feature		output
+STEM		['NOUN']		
+SUF		['CASE_INDEF_ACC']		
+----------------------------------------------

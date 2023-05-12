@@ -1,0 +1,8 @@
+Error in converting tag, no output was found: CONJ+NEG_PART+ADV
+Error in converting tag, no output was found: CONJ+PSEUDO_VERB+NOUN+CASE_DEF_ACC
+Error in converting tag, no output was found: CONNEC_PART+PSEUDO_VERB+NOUN+CASE_DEF_ACC
+Error in converting tag, no output was found: NEG_PART+ADV
+Error in converting tag, no output was found: NEG_PART+IV3FS+IV+IVSUFF_MOOD:I
+Error in converting tag, no output was found: NEG_PART+PV+PVSUFF_SUBJ:3FS
+Error in converting tag, no output was found: NEG_PART+PV+PVSUFF_SUBJ:3MS
+Error in converting tag, no output was found: PSEUDO_VERB+NOUN+CASE_DEF_ACC

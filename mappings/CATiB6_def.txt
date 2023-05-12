@@ -1,0 +1,7 @@
+Configuration	class
+DEFINE	PRC2
+DEFINE	PRC1
+DEFINE	PRC0
+DEFINE	POS
+DEFINE	ENC0
+FORMAT	(#PRC2#\+)?(#PRC1#\+)?(#PRC0#\+)?#POS#(\+#ENC0#)?

@@ -1,4 +1,0 @@
-Error in converting tag: diac:niyuwyuwrok lex:niyuwyuwrok pos:noun_prop prc3:0 prc2:0 prc1:0 prc0:0 per:na asp:na vox:na mod:na form_gen:m gen:f form_num:s num:s stt:i cas:u enc0:0 rat:i
-Error in converting tag: diac:( lex:( pos:punc prc3:na prc2:na prc1:na prc0:na per:na asp:na vox:na mod:na form_gen:na gen:na form_num:na num:na stt:na cas:na enc0:na rat:na
-Error in converting tag: diac:Al>umamu lex:>um~ap pos:noun_prop prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:f form_num:s num:p stt:d cas:n enc0:0 rat:i
-Error in converting tag: diac:Almut~aHidapu lex:mut~aHid pos:adj prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:f gen:f form_num:s num:s stt:d cas:n enc0:0 rat:n
