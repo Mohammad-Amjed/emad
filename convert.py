@@ -3,7 +3,7 @@ from tools import read
 
 def main():
     input = "MADA"
-    output = "BW2"
+    output = "CATiB6"
     tags ={}
 
     output_map_driver = read.read_map(f"{output}_to_EMADA")
@@ -23,8 +23,8 @@ def main():
                 continue
         
             output_tags = convert(input, output, tags[input], input_map_driver, output_map_driver_rev)
-            
-            if output_tags == None:
+            print(output_tags)
+            if output_tags == None or output_tags == []:
                 error_count += 1
                 with open("error_log.txt", 'a') as f:
                     f.write(f"Error in converting tag: {tags[input]}\n")

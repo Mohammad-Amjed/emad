@@ -1,5 +1,3 @@
-DEFINE	DIAC
-DEFINE	LEX
 DEFINE	POS
 DEFINE	PRC3
 DEFINE	PRC2
@@ -17,10 +15,9 @@ DEFINE	STT
 DEFINE	CAS
 DEFINE	ENC0
 DEFINE	RAT
-FORMAT	diac:#DIAC# lex:#LEX# pos:#POS# prc3:#PRC3# prc2:#PRC2# prc1:#PRC1# prc0:#PRC0# per:#PER# asp:#ASP# vox:#VOX# mod:#MOD# form_gen:#FGEN# gen:#GEN# form_num:#FNUM# num:#NUM# stt:#STT# cas:#CAS# enc0:#ENC0# rat:#RAT#
+FORMAT	pos:#POS# prc3:#PRC3# prc2:#PRC2# prc1:#PRC1# prc0:#PRC0# per:#PER# asp:#ASP# vox:#VOX# mod:#MOD# form_gen:#FGEN# gen:#GEN# form_num:#FNUM# num:#NUM# stt:#STT# cas:#CAS# enc0:#ENC0# rat:#RAT#
 CONFIG	base_word_order	4
-CONFIG	max_word_order	5				
-MAP	LEX	#VAL#	4	lex	#VAL#								
+CONFIG	max_word_order	5							
 MAP	POS	abbrev	4	pos	abbrev								
 MAP	POS	adj	4	pos	adj								
 MAP	POS	adj_comp	4	pos	adj_comp								

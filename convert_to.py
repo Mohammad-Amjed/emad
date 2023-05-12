@@ -3,6 +3,7 @@ from pprint import pprint
 from copy import deepcopy
 
 from tools import read
+from tools import parse_tag
 import EMADA
 
 # TODO include the BW map and cases
@@ -19,16 +20,21 @@ import EMADA
 def main(map, input_tag, map_driver):
     #print(f"Conversion map: {map}\n")
     #print(f"Input tag: {input_tag}\n")
-    
+    output_tags = []
+    '''
     matches = findAllMatches(input_tag, map_driver)
     #print(matches)
     if matches == []:
         return None
     
-    output_tags = []
+    
     for m in matches:
         src_vals = extractFeats(map_driver, m)
-        #print(src_vals)
+    '''
+    parsed = parse_tag.parse(input_tag, map_driver)
+    print("h", parsed)
+    for src_vals in parsed:
+        print(src_vals)
         # This is now modified to return multiple possibilites if the one feature-value pair
         # maps to many combinations possibly
         EMADA_feats = convertFeats(src_vals, map_driver)
@@ -64,6 +70,7 @@ def compileRE(map_driver):
         src_format = src_format.replace(f"#{feat}#", f"(?P<{feat}>{values})", 1)
 
     #print(src_format)
+    #import pdb; pdb.set_trace()
     return src_format
 
 def findAllMatches(input_tag, map_driver):
@@ -190,13 +197,13 @@ def addDefaults(tag, def_tag):
 if __name__ == "__main__":
     map = "MADA_to_EMADA"
     #input_tag = "diac:wawAsiTatahum lex:wAsiTap pos:noun prc3:0 prc2:wa_conj prc1:0 prc0:0 per:na asp:na vox:na mod:na gen:f fgen:f num:s fnum:s stt:c cas:a enc0:3mp_poss rat:i"
-    input_tag = "diac:Al>umamu lex:>um~ap pos:noun_prop prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:f form_num:s num:p stt:d cas:n enc0:0 rat:i"
+    input_tag = "pos:noun_prop prc3:0 prc2:0 prc1:0 prc0:Al_det per:na asp:na vox:na mod:na form_gen:m gen:f form_num:s num:p stt:d cas:n enc0:0 rat:i"
     #map = "CAMeL_to_EMADA"
     #input_tag = "PART+ADJ.MS+PRON"
 
-    map = "BW2_to_EMADA"
-    input_tag = "fa/CONNEC_PART+<in~a/PSEUDO_VERB"
-    input_tag = "ya/IV3FP+taEar~aD/IV+na/IVSUFF_SUBJ:FP"
+    #map = "BW2_to_EMADA"
+    #input_tag = "fa/CONNEC_PART+<in~a/PSEUDO_VERB"
+    #input_tag = "ya/IV3FP+taEar~aD/IV+na/IVSUFF_SUBJ:FP"
     
     #map = "CATiB6_to_EMADA"
     #input_tag = "PRT+NOM+NOM"

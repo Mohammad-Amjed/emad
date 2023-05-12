@@ -11,7 +11,7 @@ DEFINE	CAS
 DEFINE	VOX	
 DEFINE	MOD	
 DEFINE	ENC0	
-FORMAT	(#PRC2#\+)?(#PRC1#\+)?(#PRC0#\+)?#POS#(\.#ASP#?#PER#?#GEN#?#NUM#?)?(\.#STT#?#CAS#?#VOX#?#MOD#?)?(\+#ENC0#)?	
+FORMAT	(#PRC2#\+)?(#PRC1#\+)?(#PRC0#\+)?#POS#(.#ASP#?#PER#?#GEN#?#NUM#?)?(\.#STT#?#CAS#?#VOX#?#MOD#?)?(\+#ENC0#)?	
 CONFIG	base_word_order	3
 CONFIG	max_word_order	4
 MAP	PRC2	CONJ	0	pos	conj
