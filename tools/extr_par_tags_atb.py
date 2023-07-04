@@ -1,6 +1,6 @@
 import re
 
-input_path = "./data/MADA_grammar/ATB123-train.almor-msa-s31.calima-msa-s31_0.4.2"
+input_path = "./data/ATB123/ATB123-train.almor-msa-s31.calima-msa-s31_0.4.2"
 
 def unlex_bw_tag(bw_tag):
     bw_tag = bw_tag.replace("+/", "#/")
