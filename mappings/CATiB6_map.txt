@@ -1,4 +1,5 @@
 feat	val	EMAD_cat	lex	pos	per	asp	cas	stt	mod	vox	form_gen	gen	form_num	num	rat
+PRC3	PRT	PRC_QUES	-	part_interrog	-	-	-	-	-	-	-	-	-	-	-
 PRC2	PRT	PRC_CONJ	-	conj	-	-	-	-	-	-	-	-	-	-	-
 PRC2	PRT	PRC_CONJ	-	conj_sub	-	-	-	-	-	-	-	-	-	-	-
 PRC2	PRT	PRC_CONJ	-	part	-	-	-	-	-	-	-	-	-	-	-
@@ -14,6 +15,7 @@ PRC1	PRT	PRC_VPAR	-	part_jus	-	-	-	-	-	-	-	-	-	-	-
 PRC1	PRT	PRC_VPAR	-	part_interrog	-	-	-	-	-	-	-	-	-	-	-
 PRC1	PRT	PRC_VPAR	-	part_sub	-	-	-	-	-	-	-	-	-	-	-
 PRC1	PRT	PRC_VPAR	-	part_rc	-	-	-	-	-	-	-	-	-	-	-
+PRC1	PRT	PRC_VPAR	-	part	-	-	-	-	-	-	-	-	-	-	-
 PRC0	PRT	PRC_DET	-	part_neg	-	-	-	-	-	-	-	-	-	-	-
 PRC0	PRT	PRC_DET	-	part	-	-	-	-	-	-	-	-	-	-	-
 PRC0	#NULL#	PRC_DET	-	part_det	-	-	-	-	-	-	-	-	-	-	-
